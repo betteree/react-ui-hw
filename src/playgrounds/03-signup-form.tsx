@@ -12,6 +12,8 @@ function SignUpForm() {
     null
   );
 
+  const [error, setError] = useState<null | Error>(null);
+
   const handleSubmitAction = async (formData: FormData) => {
     try {
       const response = await fetch('http://localhost:4000/api/signup', {
@@ -21,13 +23,36 @@ function SignUpForm() {
 
       const jsonData = await response.json();
 
+      if (response.status >= 400) {
+        throw new Error((jsonData as { message: string }).message);
+      }
+
       setResponseData(jsonData as ResponseDataType);
     } catch (error) {
-      console.error(error);
+      setError(error as Error);
     }
   };
 
   // 조건부 렌더링
+  // 오류가 발생한 경우 오류 메시지 출력 (UI 화면)
+  if (error) {
+    return (
+      <div
+        role="alert"
+        style={{
+          color: '#dc362f',
+          display: 'flex',
+          flexFlow: 'column',
+          gap: 0,
+          marginBlock: 20,
+        }}
+      >
+        <h2 style={{ margin: 0 }}>{error.name}</h2>
+        <p style={{ margin: 0 }}>{error.message}</p>
+      </div>
+    );
+  }
+
   // 회원가입 이후 가입 사용자 정보 (UI 화면)
   if (responseData) {
     return (
