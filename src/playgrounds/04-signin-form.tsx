@@ -1,17 +1,25 @@
+import InputCom from './../components/input';
+import ButtonCom from './../components/button';
+
 function SignInForm() {
   return (
-    <section style={{ marginInline: 48 }}>
-      <h2>로그인 폼 (POST 메서드)</h2>
+    <section style={{ marginInline: 48 }} className="login-form">
       <form action="http://localhost:4000/api/signin" method="POST">
-        <div style={{ marginBlockEnd: 8 }}>
-          <label htmlFor="userEmailSignIn">이메일</label>
-          <input type="email" name="useremail" id="userEmailSignIn" />
-        </div>
-        <div style={{ marginBlockEnd: 8 }}>
-          <label htmlFor="userPasswordSignIn">패스워드</label>
-          <input type="password" name="userpassword" id="userPasswordSignIn" />
-        </div>
-        <button type="submit">로그인</button>
+        <InputCom
+          label="아이디"
+          type="email"
+          name="useremail"
+          placeholder="아이디(이메일)"
+        />
+        <hr />
+        <InputCom
+          label="비밀번호"
+          type="password"
+          name="userpassword"
+          placeholder="비밀번호"
+        />
+        <hr />
+        <ButtonCom type="submit" name="버튼" />
       </form>
     </section>
   );

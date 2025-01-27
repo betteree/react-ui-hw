@@ -1,0 +1,13 @@
+@layer components {
+  .input-form {
+
+    width: 100%;
+
+
+    & input {
+      padding: 14px;
+      background-color: white;
+      border: 0;
+    }
+  }
+}
