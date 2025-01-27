@@ -1,4 +1,3 @@
-import SignUpForm from './playgrounds/03-signup-form';
 import SignInForm from './playgrounds/04-signin-form';
 
 function Playground() {

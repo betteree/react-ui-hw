@@ -1,5 +1,5 @@
 import { useId, type ComponentProps } from 'react';
-import './form-input.css';
+import './styles/form-input.css';
 
 type InputProps = ComponentProps<'input'> & {
   label: string;
