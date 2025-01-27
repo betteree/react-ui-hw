@@ -1,0 +1,16 @@
+@layer components {
+  .button-st {
+    width: 100%;
+    padding: 14px 55px;
+    font-size: 18px;
+    border: 0;
+    background-color: #0074E9;
+    color: white;
+
+    &:disabled {
+      background-color: #97AABD;
+      color: #D4E0ED;
+    }
+
+  }
+}

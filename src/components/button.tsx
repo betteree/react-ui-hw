@@ -1,4 +1,5 @@
 import { type ComponentProps } from 'react';
+import './styles/form-button.css';
 
 type ButtonProps = ComponentProps<'button'>;
 
