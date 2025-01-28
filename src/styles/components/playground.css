@@ -31,14 +31,19 @@
 
   & form {
     margin-top: 48px;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
   }
 
   .mid-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 42px;
+    margin-bottom: 22px;
 
-    & span {
+    & button {
+      border: 0;
+      background-color: transparent;
       color: #0074E9;
       font-size: 16px;
     }
@@ -49,8 +54,13 @@
     display: flex;
     align-items: center;
     border: 2px solid #CCCCCC;
-    margin-bottom: 20px;
-
 
   }
+
+  .validation-st {
+    margin-block: 0;
+    font-size: 15px;
+    color: red;
+  }
+
 }
