@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid #CCCCCC;
+
 
     & img {
       width: 20px;

@@ -1,11 +1,18 @@
 @layer components {
   .input-form {
+    border-left: 1px solid #CCCCCC;
+    margin-right: auto;
+    width: 100%;
 
     & input {
-      width: 100%;
+
       padding: 14px;
       background-color: white;
       border: 0;
+
+      &:focus {
+        width: 100%;
+      }
     }
   }
 }

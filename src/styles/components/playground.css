@@ -22,8 +22,35 @@
   }
 }
 
-.input-st {
-  display: flex;
-  align-items: center;
-  border: 2px solid #CCCCCC
+.login-form {
+
+  & img {
+    display: flex;
+    justify-self: center;
+  }
+
+  & form {
+    margin-top: 48px;
+  }
+
+  .mid-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 42px;
+
+    & span {
+      color: #0074E9;
+      font-size: 16px;
+    }
+  }
+
+
+  .input-st {
+    display: flex;
+    align-items: center;
+    border: 2px solid #CCCCCC;
+    margin-bottom: 20px;
+
+
+  }
 }

@@ -6,10 +6,10 @@ type IconProps = ComponentProps<'img'> & {
   alt: string;
 };
 
-function Icon({ link, alt }: IconProps) {
+function Icon({ link, alt, ...restProps }: IconProps) {
   return (
     <div className="icon-container">
-      <img src={link} alt={alt} />
+      <img src={link} alt={alt} {...restProps} />
     </div>
   );
 }
