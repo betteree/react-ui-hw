@@ -26,5 +26,12 @@
     "email": "parkjun@naver.com",
     "profileImage": "/files/proflie-04.jpg",
     "password": "$2b$09$sDT5hzfGFVgBAJGRfI23uuYfQTXCEnVVJ3T3F4dOtwJOPu/lmN7ke"
+  },
+  {
+    "id": "f7d26d6d-4807-4c2c-b2c8-1cb219c3fce3",
+    "name": "김나은",
+    "email": "abc123@naver.com",
+    "profileImage": "",
+    "password": "$2b$09$iAkvVzubX5X6dDxq0nqiKeS794KMjUP8qzJqS6Yo7DuS06PZepQYW"
   }
 ]

@@ -8,6 +8,8 @@ function SignInForm() {
   const [isShow, setIsShow] = useState(false);
   const [isemailVali, setIsEmailVali] = useState(true);
   const [isPwVali, setIsPwVali] = useState(true);
+  const [isdisabled, setIsDisabled] = useState(true);
+
   const emailVali = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const pwVali = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/i;
 
@@ -29,6 +31,12 @@ function SignInForm() {
     }
   };
 
+  const handleLogin = () => {
+    if (isPwVali && isemailVali) {
+      setIsDisabled(false);
+    }
+  };
+
   return (
     <section className="login-form">
       <img src="/icon/coupang.svg" alt="쿠팡" />
@@ -43,9 +51,9 @@ function SignInForm() {
             type="email"
             name="useremail"
             placeholder="아이디(이메일)"
-            onChange={(e) =>
-              handleValidation(e.target.value, emailVali, setIsEmailVali)
-            }
+            onChange={(e) => {
+              handleValidation(e.target.value, emailVali, setIsEmailVali);
+            }}
           />
         </div>
         {!isemailVali && (
@@ -58,9 +66,10 @@ function SignInForm() {
             type={isShow ? 'text' : 'password'}
             name="userpassword"
             placeholder="비밀번호"
-            onChange={(e) =>
-              handleValidation(e.target.value, pwVali, setIsPwVali)
-            }
+            onChange={(e) => {
+              handleValidation(e.target.value, pwVali, setIsPwVali);
+              handleLogin();
+            }}
           />
 
           {isShow ? (
@@ -80,7 +89,7 @@ function SignInForm() {
           <Checkbox label="자동 로그인" type="checkbox" />
           <button>아이디(이메일)/비밀번호 찾기 </button>
         </div>
-        <ButtonCom type="submit" name="로그인" />
+        <ButtonCom type="submit" name="로그인" disabled={isdisabled} />
       </form>
     </section>
   );
