@@ -8,7 +8,7 @@ type ProductProps = {
 
 function Product({ name, price }: ProductProps) {
   const handleCount = (newValue: number) => {
-    console.log(newValue);
+    console.log(newValue * price);
   };
 
   return (
