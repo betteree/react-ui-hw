@@ -1,0 +1,22 @@
+.box-wrapper {
+  min-width: 320px;
+}
+
+.product-container {
+  display: flex;
+  height: 125.691px;
+  padding: 13.65px;
+  align-items: center;
+  gap: 20.474px;
+
+  img {
+    width: 109.197px;
+    height: 109.197px;
+    flex-shrink: 0;
+    border-radius: 109.197px;
+  }
+
+  .cart-button {
+    margin-left: auto
+  }
+}
