@@ -1,3 +1,4 @@
+import { ReactEventHandler, useState } from 'react';
 import Product from './../components/hw/product';
 import style from './../components/hw/styles/product.module.css';
 
@@ -20,15 +21,26 @@ const Products = [
 ];
 
 function CartForm() {
+  const [totalsum, setTotalSum] = useState(0);
+
+  const handleTotal = (total: number) => {
+    setTotalSum(total);
+  };
+
   return (
     <div className={style['box-wrapper']}>
       <h2>장바구니</h2>
       <hr />
       {Products.map((pd, index) => (
-        <Product key={index} name={pd.name} price={pd.price} />
+        <Product
+          key={index}
+          name={pd.name}
+          price={pd.price}
+          totalPrice={handleTotal}
+        />
       ))}
 
-      <p>구매 총액:얼마</p>
+      <p>구매 총액:{totalsum}</p>
     </div>
   );
 }

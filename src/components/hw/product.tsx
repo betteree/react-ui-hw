@@ -4,11 +4,13 @@ import CartBtn from './cart-btn';
 type ProductProps = {
   name: string;
   price: number;
+  totalPrice: (total: number) => void;
 };
 
-function Product({ name, price }: ProductProps) {
+function Product({ name, price, totalPrice }: ProductProps) {
   const handleCount = (newValue: number) => {
-    console.log(newValue * price);
+    const total = newValue * price;
+    totalPrice(total);
   };
 
   return (
