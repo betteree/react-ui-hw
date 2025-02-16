@@ -40,10 +40,6 @@ export default function SearchForm({ query, ref, setQuery }: SearchFormProps) {
 
   return (
     <>
-      <output className="bg-react text-white px-4 py-2 rounded-full text-xs font-mono">
-        {queryString}
-      </output>
-
       <form className={tm('mb-10')} action={handleSearch}>
         <label htmlFor={searchInputId} className="sr-only">
           카드 검색
@@ -56,9 +52,11 @@ export default function SearchForm({ query, ref, setQuery }: SearchFormProps) {
             id={searchInputId}
             value={query}
             onChange={handleQuery}
+            placeholder="유저 검색"
             className={tm(
               'rounded-sm px-2.5 py-1',
-              'bg-white text-react font-medium'
+              'bg-white text-react font-medium',
+              'border border-blue-300'
             )}
           />
           <button
