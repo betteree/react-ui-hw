@@ -1,7 +1,7 @@
 const colorMoodList = [
   {
     id: 'f093fbf5576c',
-    title: 'Lelah Nichols',
+    title: 'Lelah',
     description: 'Troy, MI',
     tags: ['clothes', 'stem'],
     img: '/public/profiles/proflie-01.jpg',
