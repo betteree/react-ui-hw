@@ -32,7 +32,7 @@ function SearchedList({ list, query, onUpdate }: SearchedListProps) {
   const isEmpty = filteredCount === 0;
 
   return (
-    <section className="relative w-full my-8">
+    <section className="relative w-full my-8 ">
       <h3 className="sr-only">검색된 리스트</h3>
       {isEmpty && (
         <p className="text-xl text-slate-700 font-semibold text-center">
