@@ -10,12 +10,6 @@ const getQueryState = () => getQueryParam() ?? '';
 export default function SearchCardList() {
   const [list, setList] = useState<ColorMoodItem[]>(colorMoodList);
 
-  const handleUpdateList = (item: ColorMoodItem, isFavorited: boolean) => {
-    setList(
-      list.map((it) => (it.id === item.id ? { ...it, isFavorited } : it))
-    );
-  };
-
   const [query, setQuery] = useState(getQueryState);
 
   const sharedImperativeHandlesRef = useRef<{
@@ -32,7 +26,7 @@ export default function SearchCardList() {
         query={query}
         setQuery={setQuery}
       />
-      <SearchedList list={list} query={query} onUpdate={handleUpdateList} />
+      <SearchedList list={list} query={query} />
     </section>
   );
 }

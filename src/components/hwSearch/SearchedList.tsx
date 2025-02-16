@@ -5,10 +5,9 @@ import Card from './Card';
 interface SearchedListProps {
   query: string;
   list: ColorMoodItem[];
-  onUpdate: (item: ColorMoodItem, isFavorited: boolean) => void;
 }
 
-function SearchedList({ list, query, onUpdate }: SearchedListProps) {
+function SearchedList({ list, query }: SearchedListProps) {
   const words = query
     .split(' ')
     .filter(Boolean)
@@ -42,7 +41,7 @@ function SearchedList({ list, query, onUpdate }: SearchedListProps) {
       {!isEmpty && (
         <ul className={tm('grid grid-cols-3 grid-2 gap-5')}>
           {filteredList.map((item) => (
-            <Card key={item.id} item={item} onUpdate={onUpdate} />
+            <Card key={item.id} item={item} />
           ))}
         </ul>
       )}

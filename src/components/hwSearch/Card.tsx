@@ -3,10 +3,9 @@ import { ColorMoodItem } from './../utils/types';
 
 interface CardProps {
   item: ColorMoodItem;
-  onUpdate: (item: ColorMoodItem, isFavorited: boolean) => void;
 }
 
-function Card({ item, onUpdate }: CardProps) {
+function Card({ item }: CardProps) {
   const handleLink = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     console.log(slug);
