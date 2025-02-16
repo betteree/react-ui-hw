@@ -17,8 +17,8 @@ function SearchedList({ list, query, onUpdate }: SearchedListProps) {
   const filteredList = list.filter((item) => {
     return words.every((word) => {
       if (
-        item.title.includes(word) ||
-        item.description.includes(word) ||
+        item.title.toLowerCase().includes(word) ||
+        item.description.toLowerCase().includes(word) ||
         item.tags.includes(word)
       ) {
         return true;
@@ -27,8 +27,6 @@ function SearchedList({ list, query, onUpdate }: SearchedListProps) {
       }
     });
   });
-
-  // console.log(filteredList);
 
   const filteredCount = filteredList.length;
   const isEmpty = filteredCount === 0;
