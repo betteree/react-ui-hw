@@ -15,7 +15,7 @@ function Card({ item, onUpdate }: CardProps) {
   const slug = `/color-mood/${item.id}`;
 
   return (
-    <li className={tm('flex flex-col items-center gap-3')}>
+    <li className={tm('flex items-center gap-3 ')}>
       <figure
         className={tm('size-22 rounded-full', 'relative')}
         style={{
@@ -26,11 +26,23 @@ function Card({ item, onUpdate }: CardProps) {
       ></figure>
       <a
         href={slug}
-        className={tm('flex flex-col items-center gap-0')}
+        className={tm('flex flex-col items-start gap-0')}
         onClick={handleLink}
       >
-        <h4 className="text-[22px] font-semibold">{item.title}</h4>
+        <h4 className="text-[18px] font-semibold">{item.title}</h4>
         <p className="text-sm text-slate-700">{item.description}</p>
+        <section className={tm('grid grid-cols-2 gap-1')}>
+          {item.tags.map((tag, index) => (
+            <span
+              className={tm(
+                'border border-gray-300 text-blue-500 rounded-lg p-1'
+              )}
+              key={index}
+            >
+              {tag}
+            </span>
+          ))}
+        </section>
       </a>
     </li>
   );

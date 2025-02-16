@@ -42,7 +42,7 @@ function SearchedList({ list, query, onUpdate }: SearchedListProps) {
         </p>
       )}
       {!isEmpty && (
-        <ul className={tm('grid grid-cols-3 grid-2')}>
+        <ul className={tm('grid grid-cols-3 grid-2 gap-5')}>
           {filteredList.map((item) => (
             <Card key={item.id} item={item} onUpdate={onUpdate} />
           ))}
