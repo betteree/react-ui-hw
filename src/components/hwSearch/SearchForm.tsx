@@ -65,7 +65,7 @@ export default function SearchForm({ query, ref, setQuery }: SearchFormProps) {
             className={tm(
               'cursor-pointer opacity-80',
               'grid place-content-center',
-              'bg-react text-white',
+              'bg-blue-500 text-white',
               'px-4 py-2 rounded-sm',
               'hover:opacity-100',
               'aria-disabled:cursor-not-allowed'
